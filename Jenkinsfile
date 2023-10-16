@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'dev_server' }
+  agent { label 'debian_node' }
   stages {
     stage('Tooling versions') {
       steps {
