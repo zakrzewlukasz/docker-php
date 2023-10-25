@@ -26,8 +26,7 @@ pipeline {
                     sh 'git config --global http.sslVerify false'
                     dir('basic') {
                         sh 'composer install && composer update'
-                    }
-                    
+                    }      
                     input('xxx')
               
             }
