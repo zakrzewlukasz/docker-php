@@ -24,7 +24,10 @@ pipeline {
           stage("Run Composer scripts"){
             steps {
                     sh 'git config --global http.sslVerify false'
-                    sh 'composer install && composer update'
+                    dir('basic') {
+                        sh 'composer install && composer update'
+                    }
+                    
                     input('xxx')
               
             }
