@@ -43,7 +43,8 @@ pipeline {
           stage('Build Dockerfile') {
             steps {
                 dir('docker_file') {
-                    sh 'docker build -t iwq_basic:${Version} .'
+                    sh 'pwd'
+                    //sh 'docker build -t iwq_basic:${Version} .'
                     }
                 }
             }
