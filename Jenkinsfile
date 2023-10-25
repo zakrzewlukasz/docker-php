@@ -28,7 +28,7 @@ pipeline {
                     dir('basic') {
                         sh 'composer install && composer update'
                     }      
-                    input('xxx')
+                    //input('xxx')
               
             }
         }
@@ -44,7 +44,7 @@ pipeline {
             steps {
                 dir('docker_file') {
                     sh 'pwd'
-                    //sh 'docker build -t iwq_basic:${Version} .'
+                    sh 'docker build -t iwq_basic:${Version} .'
                     }
                 }
             }
