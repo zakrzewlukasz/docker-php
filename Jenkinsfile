@@ -50,7 +50,7 @@ pipeline {
       steps {
         dir('docker_file') {
           sh 'pwd'
-          sh 'docker build -t iwq_basic:${Version} . '
+          sh 'docker build --build-arg KATALOG_TAR=/home/jenkins/workspace/aws-web-app-docker-compose/basic.tar -t iwq_basic:${Version} . '
         //-f ./workspace/aws-web-app-docker-compose/docker_file/Dockerfile
         }
       }
