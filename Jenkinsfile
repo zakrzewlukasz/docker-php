@@ -44,7 +44,8 @@ pipeline {
             steps {
                 dir('docker_file') {
                     sh 'pwd'
-                    sh 'docker build -t iwq_basic:${Version} . -f ./workspace/aws-web-app-docker-compose/docker_file/Dockerfile'
+                    sh 'docker build -t iwq_basic:${Version} . '
+                    //-f ./workspace/aws-web-app-docker-compose/docker_file/Dockerfile
                     }
                 }
             }
