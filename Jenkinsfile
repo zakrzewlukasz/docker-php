@@ -42,7 +42,7 @@ pipeline {
       steps {
         dir('basic') {
           /* groovylint-disable-next-line LineLength */
-          sh 'tar -czvf /home/jenkins/workspace/aws-web-app-docker-compose/basic.tar /home/jenkins/workspace/aws-web-app-docker-compose/basic'
+          //sh 'tar -czvf /home/jenkins/workspace/aws-web-app-docker-compose/basic.tar /home/jenkins/workspace/aws-web-app-docker-compose/basic'
         }
       }
     }
