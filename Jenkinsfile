@@ -50,7 +50,7 @@ pipeline {
       steps {
         dir('docker_file') {
           sh 'pwd'
-          sh 'docker build -t iwq_basic:${Version} . /home/jenkins/workspace/aws-web-app-docker-compose/basic'
+          sh 'docker build -t iwq_basic:${Version} -f /home/jenkins/workspace/aws-web-app-docker-compose/docker_file/Dockerfile /home/jenkins/workspace/aws-web-app-docker-compose/basic'
           //sh 'docker buildx build --build-context project=/home/jenkins/workspace/aws-web-app-docker-compose/ .'
         //-f ./workspace/aws-web-app-docker-compose/docker_file/Dockerfile
         }
