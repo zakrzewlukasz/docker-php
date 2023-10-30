@@ -7,8 +7,8 @@ pipeline {
     stages {
         stage('Get Code') {
       steps {
-        fileOperations([folderCreateOperation('basic')])
-        dir('basic') {
+        fileOperations([folderCreateOperation('iwqbasic/basic_code')])
+        dir('basic_code') {
           git credentialsId: 'planner-gitlab', url: 'https://gitlab.iwq.local/developers/planner.git'
         }
       }
@@ -24,7 +24,7 @@ pipeline {
     stage('Run Composer scripts') {
       steps {
         sh 'git config --global http.sslVerify false'
-        dir('basic') {
+        dir('basic_code') {
           sh 'composer install && composer update'
         }
       //input('xxx')
@@ -32,8 +32,8 @@ pipeline {
     }
     stage('Get Dockerfile') {
       steps {
-        fileOperations([folderCreateOperation('docker_file')])
-        dir('docker_file') {
+        //fileOperations([folderCreateOperation('docker_file')])
+        dir('iwqbasic') {
           git credentialsId: 'planner-gitlab', url: 'https://gitlab.iwq.local/developers/devops/iwq_basic_docker.git'
         }
       }
@@ -48,7 +48,7 @@ pipeline {
     }
     stage('Build Dockerfile') {
       steps {
-        dir('docker_file') {
+        dir('iwqbasic') {
           sh 'pwd'
           sh 'docker build -t iwq_basic:${Version} .'
           //sh 'docker buildx build --build-context project=/home/jenkins/workspace/aws-web-app-docker-compose/ .'
