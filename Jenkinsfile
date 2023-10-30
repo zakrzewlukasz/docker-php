@@ -8,7 +8,7 @@ pipeline {
         stage('Get Code') {
       steps {
         fileOperations([folderCreateOperation('iwqbasic/basic_code')])
-        dir('basic_code') {
+        dir('iwqbasic/basic_code') {
           git credentialsId: 'planner-gitlab', url: 'https://gitlab.iwq.local/developers/planner.git'
         }
       }
