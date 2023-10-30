@@ -24,7 +24,7 @@ pipeline {
     stage('Run Composer scripts') {
       steps {
         sh 'git config --global http.sslVerify false'
-        dir('basic_code') {
+        dir('iwqbasic/basic_code') {
           sh 'composer install && composer update'
         }
       //input('xxx')
@@ -40,7 +40,7 @@ pipeline {
     }
     stage('Tar code') {
       steps {
-        dir('basic') {
+        dir('iwqbasic') {
           /* groovylint-disable-next-line LineLength */
           //sh 'tar -czvf /home/jenkins/workspace/aws-web-app-docker-compose/basic.tar /home/jenkins/workspace/aws-web-app-docker-compose/basic'
         }
